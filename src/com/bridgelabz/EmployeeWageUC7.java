@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class EmployeeWageUC6 {
+public class EmployeeWageUC7 {
     static int IS_FULL_TIME = 1;
     static int Is_PART_TIME = 2;
     static final int EMP_RATE_PER_HOUR = 20;
