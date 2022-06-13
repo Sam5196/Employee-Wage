@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class EmployeeWageUC3 {
+public class EmployeeWageUC4 {
     static int IS_FULL_TIME = 1;
     static int Is_PART_TIME = 2;
     static int EMP_WAGE_PER_HOUR = 20;
@@ -16,17 +16,21 @@ public class EmployeeWageUC3 {
         else
             System.out.println("Employee Absent");
 
-        if (empCheck == IS_FULL_TIME) {
-            empHrs = 8;
-        } else if (empCheck == Is_PART_TIME) {
-            empHrs = 4;
-        } else
-            empHrs = 0;
+        switch (empCheck)
+        {
+            case IS_FULL_TIME :
+                empHrs=8;
+                break;
+            case Is_PART_TIME :
+                empHrs=4;
+                break;
+            default:
+                empHrs=0;
+        }
 
         empWage = empHrs * EMP_WAGE_PER_HOUR;
         System.out.println("Employee Hours :" + empHrs);
         System.out.println("Employee Wage :" + empWage);
-
 
 
     }
