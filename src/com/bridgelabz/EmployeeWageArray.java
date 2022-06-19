@@ -1,21 +1,24 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
+
 
 public class EmployeeWageArray implements InterfaceCompanyWage  {
     int numberOfCompanies = 0;
-    CompanyEmpWage[] companyEmployeeWagesArray = new CompanyEmpWage[5];
+    static ArrayList<CompanyEmpWage>companyEmployeeWagesArray=new ArrayList<CompanyEmpWage>();
 
 
 
     public void addCompanyEmpWage(String companyName, int totalWorkingHr, int totalWorkingDays, int wagePerHr) {
-        companyEmployeeWagesArray[numberOfCompanies] = new CompanyEmpWage(companyName, totalWorkingHr, totalWorkingDays, wagePerHr);
-        numberOfCompanies++;
+        CompanyEmpWage companyEmployeeWage=new CompanyEmpWage(companyName,totalWorkingHr,totalWorkingDays,wagePerHr);
+        companyEmployeeWagesArray.add(companyEmployeeWage);
     }
 
     public void calWageComputation() {
-        for (int i = 0; i < numberOfCompanies; i++) {
-            companyEmployeeWagesArray[i].setTotalEmployeeWage(this.calWageComputation(companyEmployeeWagesArray[i]));
-            System.out.println(companyEmployeeWagesArray[i]);
+        for (int i = 0; i < companyEmployeeWagesArray.size(); i++) {
+            CompanyEmpWage companyEmployeeWage= companyEmployeeWagesArray.get(i);
+            companyEmployeeWage.setTotalEmployeeWage(this.calWageComputation(companyEmployeeWage));
+            System.out.println(companyEmployeeWage);
         }
     }
 
