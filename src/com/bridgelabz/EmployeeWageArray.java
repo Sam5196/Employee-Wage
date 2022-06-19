@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
 
-public class EmployeeWageArray {
+public class EmployeeWageArray implements InterfaceCompanyWage  {
     int numberOfCompanies = 0;
     CompanyEmpWage[] companyEmployeeWagesArray = new CompanyEmpWage[5];
 
